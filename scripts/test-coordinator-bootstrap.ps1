@@ -1,7 +1,7 @@
 param(
-    [string]$BackendRepository = (Join-Path $PSScriptRoot '../../FaceLit-Backend'),
+    [string]$BackendRepository = (Join-Path $PSScriptRoot '../../backend'),
     [string]$MavenCommand,
-    [string]$BaselineRef = 'd2879d7330f995e7ee1f854b72d87024cd9a09d2',
+    [string]$BaselineRef = '81c9f27d7ba02213f8b2d6461f597c847a927807',
     [string]$EvidenceDirectory
 )
 $ErrorActionPreference = 'Stop'

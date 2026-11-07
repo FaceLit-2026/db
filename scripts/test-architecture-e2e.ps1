@@ -12,9 +12,9 @@ $ErrorActionPreference = 'Stop'
 . (Join-Path $PSScriptRoot 'lib/Restore-ProcessEnvironment.ps1')
 $dbRoot = Split-Path $PSScriptRoot -Parent
 $workspace = Split-Path $dbRoot -Parent
-$backend = Join-Path $workspace 'FaceLit-Backend'
-$frontend = Join-Path $workspace 'FaceLit'
-$micro = Join-Path $workspace 'micro-facial'
+$backend = Join-Path $workspace 'backend'
+$frontend = Join-Path $workspace 'frontend'
+$micro = Join-Path $workspace 'microservice'
 $project = 'facelit-arch-e2e-' + [guid]::NewGuid().ToString('N').Substring(0, 8)
 $microContainer = "$project-micro"
 $compose = Join-Path $dbRoot 'docker-compose.yml'
