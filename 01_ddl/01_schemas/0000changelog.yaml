@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: facelit-model-schemas
+      author: facelit
+      labels: "ddl,schemas"
+      comment: "Creates the schemas used by the FaceLit data model."
+      changes:
+        - sqlFile:
+            path: 001_create_schemas.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/01_schemas/001_create_schemas.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false

@@ -1,0 +1,177 @@
+databaseChangeLog:
+  - include:
+      file: 018_email_only_exit_reminders.changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: 017_face_reset_authorization.changelog.yaml
+      relativeToChangelogFile: true
+  - changeSet:
+      id: facelit-foreignkeys-security
+      author: facelit
+      labels: "ddl,alter,foreignkeys,security"
+      changes:
+        - sqlFile: {path: 001_create_foreignkeys_security.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/001_create_foreignkeys_security.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-foreignkeys-roleandpermission
+      author: facelit
+      labels: "ddl,alter,foreignkeys,roleandpermission"
+      changes:
+        - sqlFile: {path: 002_create_foreignkeys_roleandpermissions_tables.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/002_create_foreignkeys_roleandpermissions_tables.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-foreignkeys-academic
+      author: facelit
+      labels: "ddl,alter,foreignkeys,academic"
+      changes:
+        - sqlFile: {path: 003_create_foreignkeys_academic_tables.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/003_create_foreignkeys_academic_tables.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-foreignkeys-environment
+      author: facelit
+      labels: "ddl,alter,foreignkeys,environment"
+      changes:
+        - sqlFile: {path: 004_create_foreignkeys_environment_tables.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/004_create_foreignkeys_environment_tables.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-foreignkeys-notification
+      author: facelit
+      labels: "ddl,alter,foreignkeys,notification"
+      changes:
+        - sqlFile: {path: 005_create_foreignkeys_notification_tables.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/005_create_foreignkeys_notification_tables.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-foreignkeys-legal
+      author: facelit
+      labels: "ddl,alter,foreignkeys,legal"
+      changes:
+        - sqlFile: {path: 006_create_foreignkeys_legal_tables.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/006_create_foreignkeys_legal_tables.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-program-audit-dates
+      author: facelit
+      labels: "ddl,alter,academic,audit"
+      changes:
+        - sqlFile: {path: 007_program_audit_dates.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/007_program_audit_dates.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-chip-audit-dates
+      author: facelit
+      labels: ddl,alter,academic,audit
+      changes:
+        - sqlFile: {path: 008_chip_audit_dates.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/008_chip_audit_dates.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-user-document-length
+      author: facelit
+      labels: ddl,alter,security
+      changes:
+        - sqlFile: {path: 009_user_document_length.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/009_user_document_length.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-environment-state-capacity-unique
+      author: facelit
+      labels: ddl,alter,environment
+      changes:
+        - sqlFile: {path: 010_environment_state_capacity_unique.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/010_environment_state_capacity_unique.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-notification-catalog-fields
+      author: facelit
+      labels: ddl,alter,notification
+      changes:
+        - sqlFile: {path: 011_notification_catalog_fields.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/011_notification_catalog_fields.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-foreignkeys-facialrecognition
+      author: facelit
+      labels: ddl,alter,foreignkeys,facialrecognition
+      changes:
+        - sqlFile: {path: 012_create_foreignkeys_facialrecognition.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/012_create_foreignkeys_facialrecognition.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-user-face-embedding-array
+      author: facelit
+      labels: ddl,alter,facialrecognition
+      changes:
+        - sqlFile: {path: 013_user_face_embedding_array.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/013_user_face_embedding_array.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-record-environment-business-times
+      author: facelit
+      labels: ddl,alter,environment
+      changes:
+        - sqlFile: {path: 014_record_environment_business_times.sql, relativeToChangelogFile: true, stripComments: false, splitStatements: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/014_record_environment_business_times.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-facial-event-excuse
+      author: facelit
+      labels: ddl,alter,facialrecognition
+      changes:
+        - sqlFile: {path: 015_facial_event_excuse.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/015_facial_event_excuse.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-initial-password-prompt-seen
+      author: facelit
+      labels: ddl,alter,security
+      changes:
+        - sqlFile: {path: 016_initial_password_prompt_seen.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/016_initial_password_prompt_seen.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-account-access-requests
+      author: facelit
+      labels: ddl,alter,security
+      changes:
+        - sqlFile: {path: 019_account_access_requests.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/019_account_access_requests.rollback.sql, relativeToChangelogFile: true}
+  - changeSet:
+      id: facelit-email-change-recovery-code
+      author: facelit
+      labels: ddl,alter,security
+      changes:
+        - sqlFile: {path: 020_email_change_recovery_code.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/020_email_change_recovery_code.rollback.sql, relativeToChangelogFile: true}
+  - changeSet:
+      id: facelit-repair-duplicate-faces
+      author: facelit
+      labels: ddl,alter,facialrecognition,data-repair
+      changes:
+        - sqlFile: {path: 021_repair_duplicate_faces.sql, relativeToChangelogFile: true, stripComments: false, splitStatements: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/021_repair_duplicate_faces.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - include:
+      file: 022_facial_event_excuse_default.changelog.yaml
+      relativeToChangelogFile: true
+
+  - changeSet:
+      id: facelit-hu-mej-002-recovery-session-security
+      author: facelit
+      labels: ddl,alter,security
+      changes:
+        - sqlFile: {path: 023_recovery_session_security.sql, relativeToChangelogFile: true}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/04_alter/023_recovery_session_security.rollback.sql, relativeToChangelogFile: true}
+  - include:
+      file: 024_supported_language_de.changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: 025_terms_acceptance_notice_version.changelog.yaml
+      relativeToChangelogFile: true

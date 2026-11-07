@@ -1,0 +1,57 @@
+databaseChangeLog:
+  - changeSet:
+      id: facelit-model-security
+      author: facelit
+      labels: "ddl,tables,security"
+      changes:
+        - sqlFile: {path: 001_create_security_tables.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/03_tables/001_create_security_tables.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-model-roleandpermission
+      author: facelit
+      labels: "ddl,tables,roleandpermission"
+      changes:
+        - sqlFile: {path: 002_create_roleandpermissions_tables.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/03_tables/002_create_roleandpermissions_tables.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-model-academic
+      author: facelit
+      labels: "ddl,tables,academic"
+      changes:
+        - sqlFile: {path: 003_create_academic_tables.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/03_tables/003_create_academic_tables.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-model-environment
+      author: facelit
+      labels: "ddl,tables,environment"
+      changes:
+        - sqlFile: {path: 004_create_environment_tables.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/03_tables/004_create_environment_tables.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-model-notification
+      author: facelit
+      labels: "ddl,tables,notification"
+      changes:
+        - sqlFile: {path: 005_create_notification_tables.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/03_tables/005_create_notification_tables.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-model-legal
+      author: facelit
+      labels: "ddl,tables,legal"
+      changes:
+        - sqlFile: {path: 006_create_legal_tables.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/03_tables/006_create_legal_tables.rollback.sql, relativeToChangelogFile: true, stripComments: false}
+  - changeSet:
+      id: facelit-model-facialrecognition
+      author: facelit
+      labels: "ddl,tables,facialrecognition"
+      changes:
+        - sqlFile: {path: 007_create_facialrecognition_tables.sql, relativeToChangelogFile: true, stripComments: false}
+      rollback:
+        - sqlFile: {path: ../../05_rollbacks/01_ddl/03_tables/007_create_facialrecognition_tables.rollback.sql, relativeToChangelogFile: true, stripComments: false}

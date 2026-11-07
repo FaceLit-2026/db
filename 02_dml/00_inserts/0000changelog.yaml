@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: facelit-model-seed
+      author: facelit
+      labels: "dml,inserts,seed"
+      comment: Initial roles, permissions and assignments for the model.
+      changes:
+        - sqlFile:
+            path: seed.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/02_dml/00_inserts/seed.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false
