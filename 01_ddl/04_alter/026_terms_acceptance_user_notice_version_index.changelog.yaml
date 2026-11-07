@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: facelit-terms-acceptance-user-notice-version-index
+      author: facelit
+      preConditions:
+        - onFail: MARK_RAN
+        - onError: HALT
+        - not:
+            - indexExists:
+                schemaName: legal
+                tableName: terms_acceptance
+                indexName: uq_terms_acceptance_user_notice_version
+      labels: ddl,alter,legal,index
+      changes:
+        - createIndex:
+            indexName: uq_terms_acceptance_user_notice_version
+            schemaName: legal
+            tableName: terms_acceptance
+            unique: true
+            columns:
+              - column:
+                  name: id_user_app
+              - column:
+                  name: notice_version
+      rollback:
+        - dropIndex:
+            schemaName: legal
+            tableName: terms_acceptance
+            indexName: uq_terms_acceptance_user_notice_version

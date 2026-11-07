@@ -175,3 +175,6 @@ databaseChangeLog:
   - include:
       file: 025_terms_acceptance_notice_version.changelog.yaml
       relativeToChangelogFile: true
+  - include:
+      file: 026_terms_acceptance_user_notice_version_index.changelog.yaml
+      relativeToChangelogFile: true

@@ -2,6 +2,15 @@ databaseChangeLog:
   - changeSet:
       id: facelit-terms-acceptance-notice-version
       author: facelit
+      # A previous release may already have added this column from 06_migrations/002.
+      preConditions:
+        - onFail: MARK_RAN
+        - onError: HALT
+        - not:
+            - columnExists:
+                schemaName: legal
+                tableName: terms_acceptance
+                columnName: notice_version
       labels: ddl,alter,legal
       changes:
         - sqlFile:
